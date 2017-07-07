@@ -12,6 +12,11 @@
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
 import "phoenix_html"
+import {Socket, Presence} from "phoenix"
+
+let user = document.getElementById("User").innerText
+let socket = new Socket("/socket", {params: {user: user}})
+socket.connect()
 
 // Import local files
 //
